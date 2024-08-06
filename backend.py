@@ -1,6 +1,7 @@
 import requests
+import os
 
-API_KEY = 'e2acc7230d23e3157c5fe7596898f7f4'
+API_KEY = os.environ.get('API_KEY')
 
 
 def get_data(place, forecast_days):
@@ -12,6 +13,3 @@ def get_data(place, forecast_days):
     filtered_data = filtered_data[:nr_values]
     return filtered_data
 
-
-if __name__ == '__main__':
-    print(get_data('Budva', 5))
